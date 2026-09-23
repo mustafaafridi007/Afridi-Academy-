@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Afridi Academy | Learn. Build. Lead.</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8fc;
+    color:#092b50;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+header{
+    background:#061f3d;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,.25);
+}
+
+.nav{
+    max-width:1250px;
+    margin:auto;
+    padding:14px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#ffc928;
+    color:#061f3d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo h2{
+    font-size:22px;
+}
+
+.logo span{
+    color:#ffc928;
+}
+
+.logo small{
+    display:block;
+    color:#ddd;
+    font-size:11px;
+}
+
+.menu{
+    display:flex;
+    gap:22px;
+}
+
+.menu a{
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#ffc928;
+}
+
+.whatsapp{
+    background:#ffc928;
+    color:#061f3d!important;
+    padding:11px 18px;
+    border-radius:25px;
+}
+
+.hero{
+    min-height:620px;
+    background:
+    linear-gradient(90deg,rgba(3,22,43,.97),rgba(3,22,43,.65)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:1250px;
+    margin:auto;
+    padding:80px 30px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero h4{
+    color:#ffc928;
+    letter-spacing:4px;
+    margin-bottom:10px;
+}
+
+.hero h1{
+    font-size:62px;
+    line-height:1.05;
+    margin-bottom:10px;
+}
+
+.yellow{
+    color:#ffc928;
+}
+
+.hero h2{
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:620px;
+    color:#e5edf5;
+    font-size:17px;
+}
+
+.hero-buttons{
+    margin-top:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ffc928;
+    color:#061f3d;
+    padding:13px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.btn.dark{
+    background:transparent;
+    border:2px solid #ffc928;
+    color:white;
+}
+
+.owner-photo{
+    text-align:center;
+}
+
+.owner-photo img{
+    width:360px;
+    height:430px;
+    object-fit:cover;
+    border-radius:25px;
+    border:5px solid #ffc928;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.info-strip{
+    background:white;
+    padding:25px 6%;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    box-shadow:0 4px 20px #0001;
+}
+
+.info{
+    text-align:center;
+    padding:12px;
+    border-right:1px solid #ddd;
+}
+
+.info:last-child{
+    border:0;
+}
+
+.info strong{
+    display:block;
+    color:#092b50;
+}
+
+section{
+    padding:70px 6%;
+}
+
+.container{
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#092b50;
+}
+
+.section-title span{
+    color:#e8ad00;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about-photo{
+    width:100%;
+    max-width:390px;
+    height:450px;
+    object-fit:cover;
+    border-radius:22px;
+    border:5px solid #ffc928;
+    box-shadow:0 15px 35px #0002;
+}
+
+.about h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.about p{
+    color:#4d6074;
+    margin-bottom:20px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.feature{
+    background:#f1f6fb;
+    padding:18px;
+    border-radius:15px;
+    border-left:4px solid #ffc928;
+}
+
+.courses{
+    background:#edf5fc;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.course{
+    background:#082d52;
+    color:white;
+    padding:28px;
+    border-radius:18px;
+    border-bottom:5px solid #ffc928;
+    transition:.3s;
+}
+
+.course:hover{
+    transform:translateY(-7px);
+}
+
+.course-icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.course h3{
+    color:#ffc928;
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.course p{
+    color:#dbe8f4;
+}
+
+.teacher-section{
+    background:#062443;
+    color:white;
+}
+
+.teacher-section .section-title h2{
+    color:white;
+}
+
+.teacher-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.teacher{
+    background:#0c365d;
+    padding:20px;
+    border-radius:18px;
+    text-align:center;
+    border:1px solid #28547a;
+}
+
+.teacher img{
+    width:130px;
+    height:150px;
+    object-fit:cover;
+    border-radius:15px;
+    border:3px solid #ffc928;
+    margin-bottom:15px;
+}
+
+.teacher h3{
+    color:white;
+}
+
+.teacher p{
+    color:#ffc928;
+    font-size:14px;
+}
+
+.admission{
+    background:white;
+}
+
+.admission-box{
+    background:linear-gradient(135deg,#062443,#0c4774);
+    color:white;
+    padding:40px;
+    border-radius:25px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+}
+
+.admission-box h2{
+    color:#ffc928;
+    margin-bottom:15px;
+}
+
+.admission-list{
+    list-style:none;
+}
+
+.admission-list li{
+    margin:12px 0;
+}
+
+.admission-list li::before{
+    content:"✓";
+    color:#ffc928;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.gallery{
+    background:#f0f6fb;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery-box{
+    height:190px;
+    border-radius:15px;
+    overflow:hidden;
+    background:#dce8f2;
+}
+
+.gallery-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px #0001;
+    border-top:5px solid #ffc928;
+}
+
+.contact-card h3{
+    margin-bottom:15px;
+    color:#092b50;
+}
+
+.contact-card p{
+    margin:12px 0;
+}
+
+footer{
+    background:#03182f;
+    color:white;
+    padding:35px 6%;
+    text-align:center;
+}
+
+footer h2 span{
+    color:#ffc928;
+}
+
+.footer-links{
+    margin:15px 0;
+}
+
+.footer-links a{
+    color:white;
+    margin:0 10px;
+}
+
+.float-wa{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25d366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    z-index:999;
+    box-shadow:0 5px 20px #0004;
+}
+
+@media(max-width:900px){
+
+    .menu{
+        display:none;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .info-strip{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .about-photo{
+        margin:auto;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .course-grid{
+        grid-template-columns:1fr;
+    }
+
+    .teacher-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .admission-box{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .owner-photo img{
+        width:280px;
+        height:350px;
+    }
+
+    .info-strip{
+        grid-template-columns:1fr;
+    }
+
+    .teacher-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+
+<div class="logo-icon">A</div>
+
+<div>
+<h2>Afridi <span>Academy</span></h2>
+<small>Learn. Build. Lead.</small>
+</div>
+
+</div>
+
+<div class="menu">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#teachers">Teachers</a>
+<a href="#admission">Admissions</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+
+<a class="whatsapp" href="https://wa.me/923255951944">
+WhatsApp Us
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div>
+
+<h4>WELCOME TO</h4>
+
+<h1>
+AFRIDI <span class="yellow">ACADEMY</span>
+</h1>
+
+<h2>Learn. Build. Lead.</h2>
+
+<p>
+Afridi Academy is a modern IT learning institute focused on
+Python, Web Development, Software Development, Artificial Intelligence
+and English Language skills.
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn" href="#admission">
+Enroll Now →
+</a>
+
+<a class="btn dark" href="#courses">
+View Courses
+</a>
+
+</div>
+
+</div>
+
+
+<div class="owner-photo">
+
+<img src="mustafa.jpg" alt="Mr Mustafa Afridi">
+
+<p style="margin-top:12px;color:#ffc928;font-weight:bold;">
+Mr Mustafa Afridi — Founder & Director
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INFO -->
+
+<div class="info-strip">
+
+<div class="info">
+<strong>💻 Practical Learning</strong>
+Learn by doing
+</div>
+
+<div class="info">
+<strong>🐍 Python Development</strong>
+Modern programming skills
+</div>
+
+<div class="info">
+<strong>🤖 AI Learning</strong>
+Future-ready skills
+</div>
+
+<div class="info">
+<strong>🎯 Career Skills</strong>
+Build your future
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>About <span>Afridi Academy</span></h2>
+<p>Technology + Knowledge = Endless Opportunities</p>
+</div>
+
+
+<div class="about">
+
+<div>
+
+<img
+class="about-photo"
+src="mustafa.jpg"
+alt="Mr Mustafa Afridi"
+>
+
+</div>
+
+
+<div>
+
+<h2>Learn Today. Build Tomorrow.</h2>
+
+<p>
+Afridi Academy is a modern IT education institute located at
+KDA Gate No. 1, Kohat. Our goal is to provide practical,
+professional and career-focused education.
+</p>
+
+<p>
+Students can learn programming, web development, software
+development, artificial intelligence and English communication
+skills in a supportive learning environment.
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+<strong>Learn</strong>
+<p>Build strong technical foundations.</p>
+</div>
+
+<div class="feature">
+<strong>Build</strong>
+<p>Create real projects and applications.</p>
+</div>
+
+<div class="feature">
+<strong>Lead</strong>
+<p>Develop skills for your future career.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section class="courses" id="courses">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our <span>Courses</span></h2>
+
+<p>
+Build your skills. Create your future.
+</p>
+
+</div>
+
+
+<div class="course-grid">
+
+
+<div class="course">
+
+<div class="course-icon">🐍</div>
+
+<h3>Python & Web Development</h3>
+
+<p>
+Learn Python programming, web development,
+backend concepts and practical projects.
+</p>
+
+<p style="margin-top:12px;">
+👨‍🏫 Mr Haider Khan
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">💻</div>
+
+<h3>Software Development</h3>
+
+<p>
+Learn software development concepts and
+build useful applications and projects.
+</p>
+
+<p style="margin-top:12px;">
+👨‍🏫 Mr Mahmood Safi
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">🗣️</div>
+
+<h3>English Language</h3>
+
+<p>
+Improve speaking, grammar, vocabulary,
+writing and communication confidence.
+</p>
+
+<p style="margin-top:12px;">
+👨‍🏫 Mr Mustafa Afridi
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">🤖</div>
+
+<h3>Artificial Intelligence</h3>
+
+<p>
+Introduction to AI concepts, modern AI tools
+and future technology skills.
+</p>
+
+<p style="margin-top:12px;">
+👩‍💻 Miss Halema Sultan
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEACHERS -->
+
+<section class="teacher-section" id="teachers">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our <span>Teachers</span></h2>
+
+<p>Learn from dedicated instructors.</p>
+
+</div>
+
+
+<div class="teacher-grid">
+
+
+<div class="teacher">
+
+<img src="mustafa.jpg" alt="Mr Mustafa Afridi">
+
+<h3>Mr Mustafa Afridi</h3>
+
+<p>English Language Teacher</p>
+
+<small>Founder & Director</small>
+
+</div>
+
+
+<div class="teacher">
+
+<img src="mahmood.jpg" alt="Mr Mahmood Safi">
+
+<h3>Mr Mahmood Safi</h3>
+
+<p>Software Development</p>
+
+<small>Software Development Instructor</small>
+
+</div>
+
+
+<div class="teacher">
+
+<img src="haider.jpg" alt="Mr Haider Khan">
+
+<h3>Mr Haider Khan</h3>
+
+<p>Python & Web Development</p>
+
+<small>Python & Web Development Instructor</small>
+
+</div>
+
+
+<div class="teacher">
+
+<img src="halema.jpg" alt="Miss Halema Sultan">
+
+<h3>Miss Halema Sultan</h3>
+
+<p>AI Class Teacher</p>
+
+<small>Artificial Intelligence Instructor</small>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ADMISSION -->
+
+<section class="admission" id="admission">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Admissions <span>Open</span></h2>
+
+<p>Limited seats — Start your learning journey.</p>
+
+</div>
+
+
+<div class="admission-box">
+
+
+<div>
+
+<h2>Admission Details</h2>
+
+<ul class="admission-list">
+
+<li>Admission Fee: <strong>Rs. 5,000</strong></li>
+
+<li>Monthly Fee: <strong>Rs. 2,000</strong></li>
+
+<li>Class Timing: <strong>3:00 PM – 5:00 PM</strong></li>
+
+<li>Location: <strong>KDA Gate No. 1, Kohat</strong></li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h2>Required Documents</h2>
+
+<ul class="admission-list">
+
+<li>Matric DMC</li>
+
+<li>Matric Certificate</li>
+
+<li>CNIC / ID Card</li>
+
+</ul>
+
+<a
+class="btn"
+href="https://wa.me/923255951944"
+target="_blank"
+>
+Apply on WhatsApp →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our <span>Gallery</span></h2>
+
+<p>Academy • Learning • Technology</p>
+
+</div>
+
+
+<div class="gallery-grid">
+
+<div class="gallery-box">
+<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80">
+</div>
+
+<div class="gallery-box">
+<img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=900&q=80">
+</div>
+
+<div class="gallery-box">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80">
+</div>
+
+<div class="gallery-box">
+<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80">
+</div>
+
+<div class="gallery-box">
+<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80">
+</div>
+
+<div class="gallery-box">
+<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Get In <span>Touch</span></h2>
+
+<p>Have any questions? Contact Afridi Academy.</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<h3>📍 Academy Information</h3>
+
+<p>
+<strong>Academy:</strong> Afridi Academy
+</p>
+
+<p>
+<strong>Owner:</strong> Mr Mustafa Afridi
+</p>
+
+<p>
+<strong>Address:</strong> KDA Gate No. 1, Kohat
+</p>
+
+<p>
+<strong>City:</strong> Kohat, Khyber Pakhtunkhwa
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>📞 Contact Information</h3>
+
+<p>
+<strong>WhatsApp:</strong>
+<a href="https://wa.me/923255951944">
+03255951944
+</a>
+</p>
+
+<p>
+<strong>Email:</strong>
+<a href="mailto:must64133@gmail.com">
+must64133@gmail.com
+</a>
+</p>
+
+<a
+class="btn"
+href="https://wa.me/923255951944"
+target="_blank"
+>
+Chat on WhatsApp
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+Afridi <span>Academy</span>
+</h2>
+
+<p>
+Learn. Build. Lead.
+</p>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+|
+<a href="#about">About</a>
+|
+<a href="#courses">Courses</a>
+|
+<a href="#teachers">Teachers</a>
+|
+<a href="#admission">Admissions</a>
+|
+<a href="#contact">Contact</a>
+
+</div>
+
+<p style="font-size:13px;margin-top:15px;">
+© 2026 Afridi Academy. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<a
+class="float-wa"
+href="https://wa.me/923255951944"
+target="_blank"
+>
+W
+</a>
+
+
+</body>
+  </html>
